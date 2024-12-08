@@ -1,0 +1,138 @@
+{%load static %}
+/* General Reset */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.welcome-section {
+    background-image: url('/static/images/Cheerful_medics.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.nav-item {
+    margin-right: 20px; /* Adjust spacing as needed */
+}
+
+.nav-link {
+    font-size: 1.1rem; /* Slightly increase font size */
+}
+
+
+.alert {
+    font-size: 16px; /* Adjust to your desired size */
+    padding: 10px; /* Reduce padding for a more compact look */
+    border-radius: 5px; /* Optional: Round the edges slightly */
+}
+
+.text-dark i:hover {
+  color: #007bff; /* Change to primary blue on hover */
+  transition: color 0.3s;
+}
+
+
+/* Navbar Styling */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    color: white !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img.logo {
+    height: 70px;
+    margin-right: 20px;
+}
+
+.nav-link {
+    color: white !important;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #80cbc4 !important;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #f8f9fa; /* Light background color for better visibility */
+    color: black !important;
+    padding: 20px;
+}
+
+footer a {
+    color: #80cbc4 !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #00796b !important;
+}
+
+footer h5,
+footer p {
+    color: black !important;
+}
+
+.icon {
+    font-size: 1.5rem;
+    color: #00796b; /* Color of the icons */
+    margin-right: 10px;
+}
+
+/* Custom Gradient for Text */
+.textGradient {
+    background: -webkit-linear-gradient(45deg, #004d40, #80cbc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+/* Contact Section */
+#contact {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.uLine {
+    text-decoration: underline;
+}
+
+.cHover:hover {
+    color: #80cbc4 !important;
+}
+
+.cBlue {
+    color: #80cbc4 !important;
+}
+
+/* General Image Styling */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Services Section Styling */
+.services .icon {
+    font-size: 3rem;
+    color: #00796b; /* Color of the icons */
+    margin-right: 10px;
+}
+
+.ftco-animate .media-body p {
+    color: black !important;
+}
+
+.ftco-animate .media-body h5 {
+    color: black !important;
+}

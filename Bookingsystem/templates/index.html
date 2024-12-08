@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+{#<div class="bg bg-light text-dark pt-5 pb-5 welcome-section">#}
+{#    <div class="text-center pt-5 pb-5">#}
+{#        <h1 class="display-1 cGreen me-2 ms-2">MedPlus</h1>#}
+{#        <p class="fs-4 mt-3">Welcome to MedPlus! Your one-stop solution for booking and managing medical appointments.</p>#}
+{#        <p class="fs-4 mt-3">At MedPlus, we’re dedicated to making healthcare accessible and convenient. With our platform, you can easily book and manage appointments with qualified doctors, ensuring you get the care you need when you need it.</p>#}
+{#        <a type="button" class="btn btn-primary shadow mt-5" href="{% url 'booking' %}">Book Appointment</a>#}
+{#    </div>#}
+{#</div>#}
+
+    <div class="bg bg-light text-dark pt-5 pb-5 welcome-section" style="background-image: url('{% static "images/Cheerful_medics.png" %}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+  <div class="text-center pt-5 pb-5" style="background-color: rgba(255, 255, 255, 0.7); padding: 20px; border-radius: 10px;">
+    <h1 class="display-1 cGreen me-2 ms-2" style="text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">MedPlus</h1>
+    <p class="fs-4 mt-3" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">Welcome to MedPlus! Your one-stop solution for booking and managing medical appointments.</p>
+    <p class="fs-4 mt-3" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">At MedPlus, we’re dedicated to making healthcare accessible and convenient. With our platform, you can easily book and manage appointments with qualified doctors, ensuring you get the care you need when you need it.</p>
+    <a type="button" class="btn btn-primary shadow mt-5" href="{% url 'booking' %}">Book Appointment</a>
+  </div>
+</div>
+
+
+<!-- Services Section -->
+<section class="bg-secondary text-dark py-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services d-flex">
+                    <div class="icon justify-content-center align-items-center d-flex">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <div class="media-body pl-md-4">
+                        <h5>Doctor Care</h5>
+                        <p>Our team of highly qualified doctors is here to provide you with exceptional care and attention.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services d-flex">
+                    <div class="icon justify-content-center align-items-center d-flex">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <div class="media-body pl-md-4">
+                        <h5>Emergency Services</h5>
+                        <p>We offer round-the-clock emergency services to ensure you receive immediate care when it matters most.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services d-flex">
+                    <div class="icon justify-content-center align-items-center d-flex">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="media-body pl-md-4">
+                        <h5>Qualified Doctors</h5>
+                        <p>Our platform features a network of qualified and experienced doctors ready to assist you with your healthcare needs.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services d-flex">
+                    <div class="icon justify-content-center align-items-center d-flex">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="media-body pl-md-4">
+                        <h5>Timely Medical Attendance</h5>
+                        <p>We ensure timely medical attendance, so you never have to wait long to receive the care you deserve.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

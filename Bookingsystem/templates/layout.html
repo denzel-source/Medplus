@@ -1,0 +1,144 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="{% static 'styles/css/styles.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+   <!-- Flaticon CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous" defer></script>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous" defer></script>
+
+    {% block head %}
+    {% endblock %}
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg shadow-sm">
+        <div class="container-fluid">
+          <a class="navbar-brand cHover cGreen fs-2" href="{% url 'index' %}">
+            <img src="{% static 'images/mediplus_logo.png' %}" alt="MedPlus Logo" class="logo">
+            <h1>MedPlus</h1>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0 fs-5">
+              <li class="nav-item">
+                <a class="nav-link active cHover" aria-current="page" href="{% url 'index' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active cHover" href="#contact">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active cHover" href="{% url 'booking' %}">Book Appointment</a>
+              </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link active cHover" href="{% url 'staffPanel' %}">Staff Panel</a>
+              </li>
+              <ul class="navbar-nav">
+  <li class="nav-item me-3 fs-5">
+    <a class="nav-link active cHover" href="{% url 'userPanel' %}">User</a>
+  </li>
+  <li class="nav-item me-3 fs-5">
+    <a class="nav-link active cHover" href="{% url 'logout' %}">Sign Out</a>
+  </li>
+</ul>
+
+              {% else %}
+              <li class="nav-item me-3">
+                <a class="nav-link active cHover" href="{% url 'register' %}">Sign in/Sign Up</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+{#      <!--Messages Start-->#}
+{#      {% if messages %}#}
+{#      {% for message in messages %}#}
+{#        <div class="alert alert-success alert-dismissible fade show text-center" role="alert">#}
+{#          <h3 class="display-3">{{ message }}</h3>#}
+{#          <button type="button" class="btn-close fs-1 position-absolute top-50 start-0 translate-middle-y" data-bs-dismiss="alert" aria-label="Close"></button>#}
+{#        </div>#}
+{#      {% endfor %}#}
+{#      {% endif %}#}
+{#      <!--Messages End-->#}
+<!--Messages Start-->
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-success text-center" role="alert">
+        <p class="fs-5">{{ message }}</p>
+    </div>
+  {% endfor %}
+{% endif %}
+<!--Messages End-->
+
+    </header>
+
+    {% block body %}
+    {% endblock %}
+
+    <footer class="bg-light text-dark pt-4">
+  <div class="container">
+    <div class="row">
+
+      <!-- Contact Section -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-uppercase fw-bold mb-3 textGradient"id="contact">Contact Us</h5>
+        <p class="d-flex align-items-center">
+          <i class="fas fa-phone-alt me-2 cBlue"></i>
+          <a href="tel:+254794630867" class="text-dark">+254 794 630 867</a>
+        </p>
+        <p class="d-flex align-items-center">
+          <i class="fas fa-envelope me-2 cBlue"></i>
+          <a href="mailto:info@medplus.com" class="text-dark">info@medplus.com</a>
+        </p>
+        <p class="fw-bold">Follow Us:</p>
+        <div class="d-flex">
+          <a href="https://facebook.com/medplus" class="text-dark me-3">
+            <i class="fab fa-facebook-f fa-2x"></i>
+          </a>
+          <a href="https://twitter.com/medplus" class="text-dark me-3">
+            <i class="fab fa-x-twitter fa-2x"></i>
+          </a>
+          <a href="https://instagram.com/medplus" class="text-dark">
+            <i class="fab fa-instagram fa-2x"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services Section -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-uppercase fw-bold mb-3 textGradient">Our Services</h5>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-stethoscope me-2 cBlue"></i><a href="#!" class="text-dark">Outdoor Services</a></li>
+          <li><i class="fas fa-clock me-2 cBlue"></i><a href="#!" class="text-dark">Timely Medical Attendance</a></li>
+          <li><i class="fas fa-user-md me-2 cBlue"></i><a href="#!" class="text-dark">Qualified Doctors</a></li>
+          <li><i class="fas fa-ambulance me-2 cBlue"></i><a href="#!" class="text-dark">Emergency Services</a></li>
+          <li><i class="fas fa-hospital me-2 cBlue"></i><a href="#!" class="text-dark">In-Patient Services</a></li>
+        </ul>
+      </div>
+
+      <!-- About Section -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-uppercase fw-bold mb-3 textGradient">About Us</h5>
+        <p>
+          MediPlus is committed to providing the best healthcare services. We pride ourselves on excellence, timely medical care, and a dedicated team of healthcare professionals.
+        </p>
+        <p>
+          <a href="#about" class="text-dark uLine">Learn More</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</footer>
